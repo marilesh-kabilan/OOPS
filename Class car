@@ -1,0 +1,68 @@
+package kabilan;
+
+import java.util.Scanner;
+
+public class Classcar {
+
+    private String model;
+    private String color;
+    private boolean isRunning;
+
+    public Classcar(String model, String color) {
+        this.model = (model != null) ? model.trim() : "";
+        this.color = (color != null) ? color.trim() : "";
+        this.isRunning = false;
+    }
+
+    public void start() {
+        if (!isRunning) {
+            isRunning = true;
+            if (model.isEmpty()) {
+                System.out.println("Car started (model not specified).");
+            } else {
+                System.out.println("Car started: " + color + " " + model);
+            }
+        } else {
+            System.out.println("Car is already running.");
+        }
+    }
+
+    public void stop() {
+        if (isRunning) {
+            isRunning = false;
+            System.out.println("Car stopped.");
+        } else {
+            System.out.println("Car is already stopped.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter car model: ");
+        String userModel = scanner.nextLine();
+
+        System.out.print("Enter car color: ");
+        String userColor = scanner.nextLine();
+
+      
+        Classcar myCar = new Classcar(userModel, userColor);
+
+        System.out.print("Do you want to start the car? (yes/no): ");
+        String startChoice = scanner.nextLine().trim().toLowerCase();
+
+        if (startChoice.equals("yes")) {
+            myCar.start();
+        }
+
+        System.out.print("Do you want to stop the car? (yes/no): ");
+        String stopChoice = scanner.nextLine().trim().toLowerCase();
+
+        if (stopChoice.equals("yes")) {
+            myCar.stop();
+        }
+
+        scanner.close();
+    }
+}
