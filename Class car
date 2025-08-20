@@ -61,6 +61,8 @@ public class Classcar {
 
         if (stopChoice.equals("yes")) {
             myCar.stop();
+        }else {
+        	 System.out.println("car is still running");
         }
 
         scanner.close();
