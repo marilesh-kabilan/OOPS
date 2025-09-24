@@ -42,3 +42,29 @@ public class Race {
         // racerC.start(); // Uncomment for TC4
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Output 
+Thread A is at step 1
+Thread B is at step 1
+Thread A is at step 2
+Thread B is at step 2
+Thread A is at step 3
+Thread B is at step 3
+Thread A is at step 4
+Thread B is at step 4
+Thread A is at step 5
+Thread B is at step 5
+Thread A has finished the race!
+Thread B has finished the race!
